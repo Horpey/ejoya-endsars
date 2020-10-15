@@ -46,7 +46,7 @@
             <div class="card cardslimg mt-5">
               <div class="card-body p-0">
                 <div class="wholff">
-                  <div class="place-parent">
+                  <div class="place-parent" id="capturedDiv">
                     <div
                       class="placeholder"
                       v-if="displaypic"
@@ -95,16 +95,24 @@
                 accept="image/png, image/jpeg, image/jpg"
                 @change="getUserImage($event)"
               />
+
               <div class="mt-5 bt-actions" style="margin-bottom: -1px">
-                <a href="#" class="btn btn-theme">DOWNLOAD</a>
+                <a
+                  @click="downloadImg"
+                  href="javascript:void(0)"
+                  class="btn btn-theme"
+                  >DOWNLOAD</a
+                >
                 <a href="#" class="btn btn-theme-out">SHARE</a>
               </div>
             </div>
+            <div id="capture"></div>
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script src="./js/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="./js/script.js"></script>
 </html>
